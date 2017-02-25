@@ -3,11 +3,21 @@
 #include "funcion.h"
 
 using namespace std;
+funcion::funcion(){
 
-funcion::funcion(int grado,int[] coeficiente)
+}
+
+funcion::funcion(int grado,int* coeficiente2)
 {
 	this->grado=grado;
-	this->coeficiente=coeficiente;
+	this->coeficiente=coeficiente2;
+
+	/*coeficiente = new int[grado + 1];
+
+	for (int i = 0; i < grado + 1; i++)
+	{
+		coeficiente[i] = coeficiente2[i];
+	}*/
 }
 
 
@@ -21,22 +31,39 @@ void funcion::setGrado(int grado)
 	this->grado=grado;
 }
 
-int funcion::getCoeficiente()
+int* funcion::getCoeficiente()
 {
 	return coeficiente;
 }
 
-void funcion::setCoeficiente(int)
+void funcion::setCoeficiente(int* c)
 {
-
+	coeficiente=c;
 }
 
+string funcion::toString()const {
+	stringstream ss;
+	//ss << ;
+	for (int i = grado+1; i < 0; ++i)
+	{
+		if (i=0)
+				{
+					ss<<coeficiente[i];
+				}else
+				{
+					ss<<coeficiente[i]<<"x^"<<i<<"+";
+				}
+	}
 
+	return ss.str();
+	}
+
+/*
 funcion funcion:: operator+ (funcion op) {
 	funcion retval;
 	int tam;
 	if (funcion.getGrado() > grado)
-	{
+	{|
 		tam=funcion.getGrado;
 	}else
 	{
@@ -51,7 +78,8 @@ funcion funcion:: operator+ (funcion op) {
 	
 	return retval;
 }
-
+*/
+/*
 const funcion funcion:: operator- (const funcion op)const {
 	//retorna la resta de los dos valores
 	funcion retval(op.value - this -> value);
@@ -70,8 +98,6 @@ const funcion funcion:: operator/ (const funcion op)const {
 	return retval;
 }
 
-string funcion::toString()const {
-	stringstream ss;
-	ss << value;
-	return ss.str();
-}
+
+*/
+

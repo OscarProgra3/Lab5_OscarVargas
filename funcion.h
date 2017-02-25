@@ -1,5 +1,5 @@
-#pragma once
-#include <iostream>
+#ifndef FUNCION_H
+#define FUNCION_H
 #include <vector>
 #include <sstream>
 
@@ -9,20 +9,20 @@ class funcion
 {
 	private:
 		int grado;
-		int[grado+1] coeficiente;
+		int* coeficiente;
 
 	public:
 		funcion();
-		funcion(int num, int[] coeficiente);
-		//~funcion();
+		funcion(int num, int* coeficiente);
+		~funcion();
 		int getGrado();
 		void setGrado(int n);	
-		int getCoeficiente();
-		void setCoeficiente(int,int);
+		int* getCoeficiente();
+		void setCoeficiente(int*);
 
 		funcion operator+(funcion); 
-		funcion operator-()
+		funcion operator-(funcion);
+		string toString()const;
 
-
-
-}
+};
+#endif

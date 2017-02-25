@@ -1,12 +1,14 @@
 #ifndef FUNCION_H
 #define FUNCION_H
 #include <vector>
+#include <string>
 #include <sstream>
 
 using namespace std;
 
 class funcion
 {
+	friend ostream& operator<<(ostream& out, funcion r);
 	private:
 		int grado;
 		int* coeficiente;
@@ -22,6 +24,7 @@ class funcion
 
 		funcion operator+(funcion); 
 		funcion operator-(funcion);
+		funcion operator==(funcion);
 		string toString()const;
 
 };

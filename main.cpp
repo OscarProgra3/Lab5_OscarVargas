@@ -17,6 +17,8 @@ int main()
                 cin>> resp;
         		if(resp==9)
         		{
+        			
+
         			int g;
         			cout<<"\nIngrese el grado del la funcion"<<endl;
         			
@@ -37,10 +39,7 @@ int main()
         			f.push_back(ff);
         			
         		}
-        		if (resp==8)
-        		{
-        			
-        		}
+        		
         }			
 
 

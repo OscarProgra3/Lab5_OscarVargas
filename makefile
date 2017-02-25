@@ -8,5 +8,5 @@ funcion.o: funcion.cpp funcion.h
 	g++ -c funcion.cpp funcion.h
 
 clean:
-	rm -f *.o main
+	rm -f *.o *.main
                                                                           
